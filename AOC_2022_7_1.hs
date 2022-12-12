@@ -10,8 +10,8 @@ main1 = do
     putStrLn $ show $ analyze1 $ contents                                               
 
 analyze1 :: String -> Int
--- analyze1 s = sum $ filter (< 100000) $  Map.elems (Map.fromListWith (+) (count1 (lines s) "" []))
-analyze1 s = sum $ Map.fold (\x y -> if (x <= 100000) then [x] ++ y else y) [] (Map.fromListWith (+) (count1 (lines s) "" []))
+analyze1 s = sum $ filter (< 100000) $ Map.elems (Map.fromListWith (+) (count1 (lines s) "" []))
+-- analyze1 s = sum $ Map.fold (\x y -> if (x <= 100000) then [x] ++ y else y) [] (Map.fromListWith (+) (count1 (lines s) "" []))
 
 -- key for folder B in folder A (.../A/B/) = "AB"
 f [] = []
